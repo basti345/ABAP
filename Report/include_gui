@@ -1,0 +1,20 @@
+DATA l_rng_carr_id TYPE S_CARR_ID.
+
+SELECTION-SCREEN: BEGIN OF BLOCK sel1 WITH FRAME TITLE TEXT-001.
+PARAMETERS: p_runda TYPE dats OBLIGATORY DEFAULT sy-datum,
+            p_bukrs TYPE bukrs DEFAULT '0001' OBLIGATORY.
+SELECTION-SCREEN: END OF BLOCK sel1.
+
+SELECTION-SCREEN: BEGIN OF BLOCK var WITH FRAME TITLE TEXT-002.
+SELECT-OPTIONS: so_carr FOR l_rng_carr_id.
+SELECTION-SCREEN: END OF BLOCK var.
+
+
+AT SELECTION-SCREEN OUTPUT.
+  LOOP AT SCREEN.
+    "Example for just show the element
+    IF screen-name = 'P_RUNDA'.
+      screen-input = '0'.
+      MODIFY SCREEN.
+    ENDIF.
+  ENDLOOP.
