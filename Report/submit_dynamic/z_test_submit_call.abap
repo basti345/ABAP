@@ -1,2 +1,3 @@
 Report z_test_submit_call.
-parameters: p_bukrs  type bukrs obligatory.
+
+SUBMIT Z_submit WITH p_bukrs = '0010' AND RETURN.
