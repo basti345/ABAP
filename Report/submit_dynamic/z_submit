@@ -1,1 +1,4 @@
+report z_submit.
+parameters: p_bukrs type bukrs obligatory memory id buk.
 
+write: p_bukrs.
